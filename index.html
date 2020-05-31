@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>hangman</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <header>
+    <h1>hangman</h1>
+    <p>by kyra</p>
+  </header>
+  <body>
+
+    <div id="game">
+      <div id="top">
+        <a id="start" class="button" onclick="chooseWord()">start</a>
+        <a id="directions">click a letter to guess it.<p id="guessesLeft">guesses remaining: 6</p></a>
+      </div>
+      <div id="secretWord" ></div>
+      <div id="hint">(topic: <a id="topic"></a>)</div>
+      <div id="hangman">
+        <a class="stand">&nbsp&nbsp&nbsp&nbsp__<br />&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp| <br />&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp</a>
+        <a id="head" class="bodyPart">O</a><br />
+        <a class="stand">
+          &nbsp&nbsp&nbsp|</a> <a id="leftArm" class="bodyPart">&nbsp&nbsp/</a><a id="torso" class="bodyPart">|</a><a id="rightArm" class="bodyPart">\</a><br />
+        <a class="stand">&nbsp&nbsp&nbsp|</a>
+        <a id="leftLeg" class="bodyPart">&nbsp&nbsp&nbsp/</a><a id="rightLeg" class="bodyPart">\</a><br />
+        <a class="stand">&nbsp&nbsp&nbsp|<br />_|______</a>
+      </div>
+      <div id="wrongGuess"></div>
+    </div>
+
+    <div id="keyboard">
+      <a class="letter" id="a" onclick="guessLetter(this.id)">a</a>
+      <a class="letter" id="b" onclick="guessLetter(this.id)">b</a>
+      <a class="letter" id="c" onclick="guessLetter(this.id)">c</a>
+      <a class="letter" id="d" onclick="guessLetter(this.id)">d</a>
+      <a class="letter" id="e" onclick="guessLetter(this.id)">e</a>
+      <a class="letter" id="f" onclick="guessLetter(this.id)">f</a>
+      <a class="letter" id="g" onclick="guessLetter(this.id)">g</a>
+      <a class="letter" id="h" onclick="guessLetter(this.id)">h</a>
+      <a class="letter" id="i" onclick="guessLetter(this.id)">i</a>
+      <a class="letter" id="j" onclick="guessLetter(this.id)">j</a>
+      <a class="letter" id="k" onclick="guessLetter(this.id)">k</a>
+      <a class="letter" id="l" onclick="guessLetter(this.id)">l</a>
+      <a class="letter" id="m" onclick="guessLetter(this.id)">m</a>
+      <a class="letter" id="n" onclick="guessLetter(this.id)">n</a>
+      <a class="letter" id="o" onclick="guessLetter(this.id)">o</a>
+      <a class="letter" id="p" onclick="guessLetter(this.id)">p</a>
+      <a class="letter" id="q" onclick="guessLetter(this.id)">q</a>
+      <a class="letter" id="r" onclick="guessLetter(this.id)">r</a>
+      <a class="letter" id="s" onclick="guessLetter(this.id)">s</a>
+      <a class="letter" id="t" onclick="guessLetter(this.id)">t</a>
+      <a class="letter" id="u" onclick="guessLetter(this.id)">u</a>
+      <a class="letter" id="v" onclick="guessLetter(this.id)">v</a>
+      <a class="letter" id="w" onclick="guessLetter(this.id)">w</a>
+      <a class="letter" id="x" onclick="guessLetter(this.id)">x</a>
+      <a class="letter" id="y" onclick="guessLetter(this.id)">y</a>
+      <a class="letter" id="z" onclick="guessLetter(this.id)">z</a>
+    </div>
+
+    <div id="lose" class="gameOver">
+      <h1>you lose :(</h1>
+      the word was "<a id="secretWordLose"></a>"
+      <a class="button" onclick="chooseWord()">play again</a>
+      <div id="endHang">
+        <a class="stand">&nbsp&nbsp&nbsp&nbsp__<br />&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp| <br />&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp</a>
+        <a>O</a><br />
+        <a class="stand">&nbsp&nbsp&nbsp|</a> &nbsp&nbsp/|\<br />
+        <a class="stand">&nbsp&nbsp&nbsp|</a>
+        &nbsp&nbsp&nbsp/\<br />
+        <a class="stand">&nbsp&nbsp&nbsp|<br />_|______</a>
+      </div>
+    </div>
+
+    <div id="win" class="gameOver">
+      <h1>you win!</h1>
+      the word was "<a id="secretWordWin"></a>"
+      <a class="button" onclick="chooseWord()">play again</a>
+    </div>
+
+    <script type="text/javascript" src="scripts.js"></script>
+  </body>
+</html>
